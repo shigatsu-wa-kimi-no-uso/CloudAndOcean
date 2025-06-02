@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VolumetricCloud
+  m_Shader: {fileID: 4800000, guid: b2e30d82c352a0b4889f9ff298d402e7, type: 3}
+  m_ValidKeywords:
+  - _CHECKERBOARD_FULL_RENDERING_WHEN_INVIEW
+  - _CHECKERBOARD_OCTAHEDRON_SPACE
+  - _CLOUD_MODIFY_WITH_WEATHERMAP
+  - _CLOUD_SCATTERING_BEER_POWDER
+  - _CLOUD_SCATTERING_MULTIPLE
+  - _CLOUD_VOLUME_DENSITY_COMPONENT_R
+  - _CLOUD_VOLUME_DETAIL_DENSITY_COMPONENT_B
+  - _RAYMARCH_HEMI_OCTAHEDRON_SPACE
+  - _RAYMARCH_TEMPORAL_FILTER_NO_REPROJECTION
+  - _RAYMARCH_TEMPORAL_FILTER_ON
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudVolumeDetailTex:
+        m_Texture: {fileID: 11700000, guid: d67700cf5252b3f418d294418652c774, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudVolumeTex:
+        m_Texture: {fileID: 11700000, guid: d04bd62464d7c6c4e9a2909e2891d6fe, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CloudWeatherMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ErosionVolumeTex:
+        m_Texture: {fileID: 11700000, guid: d67700cf5252b3f418d294418652c774, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex3:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WeatherMap:
+        m_Texture: {fileID: 2800000, guid: d8b7e122162a9e240b7c4eb9688fbea1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BILATERAL_FILTER: 0
+    - _BeerPowderFactor: 0.5
+    - _BilateralFilter_SpatialKernelSize: 3
+    - _BlendFactor: 0.1
+    - _BumpScale: 1
+    - _CLOUD_MODIFY_WITH: 1
+    - _CLOUD_SCATTERING_BEER_POWDER: 1
+    - _CLOUD_SCATTERING_MULTIPLE: 1
+    - _CLOUD_VOLUME_DENSITY_COMPONENT: 0
+    - _CLOUD_VOLUME_DETAIL_DENSITY_COMPONENT: 2
+    - _Cutoff: 0.5
+    - _DarknessThreshold: 0
+    - _DensityScale: 1
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _HgPhaseG1Factor: 0.8
+    - _HgPhaseG2Factor: -0.5
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RAYMARCH_JITTER: 0
+    - _RAYMARCH_TEMPORAL_FILTER: 1
+    - _RandomSeed: 0.5
+    - _RayMarching_Iteration: 16
+    - _RayMarching_RelativeJitterRange: 0.15
+    - _RayMarching_ScatterIteration: 4
+    - _RelativeJitterRange: 0.304
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _Absorption: {r: 0.15, g: 0.15, b: 0.15, a: 0}
+    - _AbsorptionLight: {r: 0.08, g: 0.08, b: 0.08, a: 0}
+    - _AbsorptionScatter: {r: 0.4, g: 0.4, b: 0.4, a: 0}
+    - _Albedo: {r: 1, g: 1, b: 1, a: 1}
+    - _BilateralFilter_ColorSigma: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudVolumeBounds_Max: {r: 5000, g: 3000, b: 5000, a: 1}
+    - _CloudVolumeBounds_Min: {r: -5000, g: 1000, b: -5000, a: 1}
+    - _CloudVolumeDetailTex_CoordsOffsetSpeed: {r: 0.06, g: 0, b: 0, a: 0}
+    - _CloudVolumeDetailTex_CoordsScale: {r: 30, g: 30, b: 30, a: 1}
+    - _CloudVolumeDetailTex_ValueOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudVolumeDetailTex_ValueScale: {r: 0.05, g: 0.13, b: 0.02, a: 0.02}
+    - _CloudVolumeTexDetail_CoordsOffsetSpeed: {r: 0, g: 0, b: 0, a: 1}
+    - _CloudVolumeTexDetail_CoordsScale: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudVolumeTexDetail_ValueOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudVolumeTexDetail_ValueScale: {r: 1, g: 1, b: 1, a: 1}
+    - _CloudVolumeTex_CoordsOffset: {r: 0, g: 0, b: 0, a: 1}
+    - _CloudVolumeTex_CoordsOffsetSpeed: {r: 0.05, g: 0, b: 0, a: 0}
+    - _CloudVolumeTex_CoordsScale: {r: 15, g: 15, b: 15, a: 0}
+    - _CloudVolumeTex_ValueOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _CloudVolumeTex_ValueScale: {r: 0.14, g: 0, b: 0, a: 0}
+    - _Color: {r: 0.7924528, g: 0.31772873, b: 0.31772873, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _ErosionVolumeTex_CoordsOffsetSpeed: {r: 0, g: 0, b: 0, a: 1}
+    - _ErosionVolumeTex_CoordsScale: {r: 100, g: 100, b: 100, a: 1}
+    - _ErosionVolumeTex_ValueOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ErosionVolumeTex_ValueScale: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Sigma: {r: 1, g: 1, b: 1, a: 1}
+    - _WeatherMap_CoordsOffsetSpeed: {r: 0.04, g: 0, b: 0, a: 0}
+    - _WeatherMap_CoordsScale: {r: 10, g: 0, b: 5, a: 0}
+    - _WeatherMap_ValueOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _WeatherMap_ValueScale: {r: 0.05, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

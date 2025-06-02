@@ -1,0 +1,74 @@
+
+groupshared float gs_bool;
+
+int offset;
+int slot;
+int blockSize;
+Texture2D heightMap;
+RWTexture2D<float4> hiZMap;
+
+float TestZ(uint2 pos,int blockSize)
+{
+    for (int i=0;i<blockSize;i++){
+        for (int j=0;j<blockSize;j++){
+            int2 testPos = pos + int2(i,j);
+            if (heightMap[testPos].g>0.999){
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+float BatchTestZ(uint2 pos)
+{
+    gs_bool = 0;
+    GroupMemoryBarrierWithGroupSync();
+    if (heightMap[pos].g>0.999)
+    {
+        gs_bool = 1;
+    }
+    GroupMemoryBarrierWithGroupSync();
+    return gs_bool;
+}
+
+#define DEFINE_HIZ_CS_OLD(blockSize,slot) \
+[numthreads(blockSize,blockSize,1)] \
+void CSMain_##blockSize (uint3 heightMapPos : SV_DispatchThreadID, uint3 hiZPos : SV_GroupID) \
+{ \
+    float4 val = hiZMap[heightMapPos.xy];\
+    val.##slot = BatchTestZ(heightMapPos.xy);\
+    hiZMap[heightMapPos.xy] = val;    \
+}
+
+#pragma kernel CSMain_1
+DEFINE_HIZ_CS_OLD(1,x);
+
+#pragma kernel CSMain_2
+DEFINE_HIZ_CS_OLD(2,x);
+
+#pragma kernel CSMain_4
+DEFINE_HIZ_CS_OLD(4,x);
+
+#pragma kernel CSMain_8
+DEFINE_HIZ_CS_OLD(8,x);
+
+#pragma kernel CSMain
+[numthreads(1,1,1)] 
+void CSMain (uint3 hiZPos : SV_DispatchThreadID) 
+{ 
+    float4 val = hiZMap[hiZPos.xy+int2(offset,offset)];
+    uint2 heightMapPos = hiZPos.xy;
+    float result = TestZ(heightMapPos.xy,blockSize);
+    int switchX = (1-slot)*(2-slot)*(3-slot)/6;
+    int switchY = slot*(2-slot)*(3-slot)/2;
+    int switchZ = slot*(slot-1)*(3-slot)/2;
+    int switchW = slot*(slot-1)*(slot-2)/6;
+    val.x = (1-switchX)*val.x + switchX*result;
+    val.y = (1-switchY)*val.y + switchY*result;
+    val.z = (1-switchZ)*val.z + switchZ*result;
+    val.w = (1-switchW)*val.w + switchW*result;
+    hiZMap[hiZPos.xy+int2(offset,offset)] = val;
+}
+
+

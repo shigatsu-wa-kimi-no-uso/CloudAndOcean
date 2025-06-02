@@ -1,0 +1,2 @@
+Assets/Arts/**/Texture/*.* filter=lfs diff=lfs merge=lfs -text
+Assets/Arts/**/Mesh/*.* filter=lfs diff=lfs merge=lfs -text
